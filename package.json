@@ -6,7 +6,7 @@
         "type": "github",
         "url": "https://github.com/Lukz127/TLISP-VSCode-support"
     },
-    "version": "0.0.3",
+    "version": "0.0.4",
     "engines": {
         "vscode": "^1.98.0"
     },

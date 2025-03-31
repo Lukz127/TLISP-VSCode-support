@@ -95,7 +95,7 @@
         "keywords": {
             "patterns": [
                 {
-                    "match": "^'?\\(+\\s*((nth|continue|break|push|pop|defmacro|sizeof|when|unless|while|dolist|dotimes|return|def|set|defun|extern-fn|defclass|classfun|import)|(this)|(int|uint|int8|uint8|float|double|bool|vector|array|optional|string)|(nil|f)|(not|or|and|xor)|(<|>|=)|([\\-\\+\\*/%])|([^\\s\\)]+))[\\b\\s\\)]",
+                    "match": "\\(\\s*((nth|continue|break|push|pop|defmacro|sizeof|when|unless|while|dolist|dotimes|return|def|set|defun|extern-fn|defclass|classfun|import)|(this)|(int|uint|int8|uint8|float|double|bool|vector|array|optional|string)|(nil|f)|(not|or|and|xor)|(<|>|=)|([\\-\\+\\*/%]+)|([^\\s\\)]+))[\\b\\s\\)]",
                     "captures": {
                         "2": {
                             "name": "keyword.control.python"
@@ -119,7 +119,19 @@
                             "name": "keyword.operator.arithmetic.tlisp"
                         },
                         "9": {
-                            "name": "meta.function-call.generic.python"
+                            "patterns": [
+                                {
+                                    "match": "['\\(\\s]*(?:([\\d]+(?:\\.\\d+)?)|(\\S+))\\b",
+                                    "captures": {
+                                        "1": {
+                                            "name": "constant.numeric.python"
+                                        },
+                                        "2": {
+                                            "name": "meta.function-call.generic.python"
+                                        }
+                                    }
+                                }
+                            ]
                         }
                     }
                 }
