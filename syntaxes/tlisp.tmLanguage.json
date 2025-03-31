@@ -95,7 +95,7 @@
         "keywords": {
             "patterns": [
                 {
-                    "match": "\\(+\\s*((when|unless|while|dolist|dotimes|return|def|set|defun|extern-fn|defclass|classfun|import)|(this)|(int|uint|int8|uint8|float|double|bool|vector|array|optional|string)|(nil|f)|(not|or|and)|(<|>|=)|([\\-\\+\\*/%])|([^\\s\\)]+))[\\b\\s\\)]",
+                    "match": "\\(+\\s*((nth|continue|break|push|pop|defmacro|sizeof|when|unless|while|dolist|dotimes|return|def|set|defun|extern-fn|defclass|classfun|import)|(this)|(int|uint|int8|uint8|float|double|bool|vector|array|optional|string)|(nil|f)|(not|or|and|xor)|(<|>|=)|([\\-\\+\\*/%])|([^\\s\\)]+))[\\b\\s\\)]",
                     "captures": {
                         "2": {
                             "name": "keyword.control.python"
