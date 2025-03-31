@@ -1,0 +1,130 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "TLISP",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#number"
+        },
+        {
+            "include": "#refKw"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#bool"
+        },
+        {
+            "include": "#this"
+        }
+    ],
+    "repository": {
+        "types": {
+            "patterns": [
+                {
+                    "match": "\\b(int|uint|int8|uint8|float|double|bool|vector|array|optional|string)\\b",
+                    "name": "support.type.python"
+                }
+            ]
+        },
+        "number": {
+            "patterns": [
+                {
+                    "match": "(?<!\\S)(-?\\d+(\\.\\d+)?)\\b",
+                    "captures": {
+                        "1": {
+                            "name": "constant.numeric.tlisp"
+                        }
+                    }
+                }
+            ]
+        },
+        "bool": {
+            "patterns": [
+                {
+                    "name": "constant.language.tlisp",
+                    "match": "\\b(nil|f)\\b"
+                }
+            ]
+        },
+        "this": {
+            "patterns": [
+                {
+                    "name": "variable.language.special.self.python",
+                    "match": "\\b(this)\\b"
+                }
+            ]
+        },
+        "refKw": {
+            "patterns": [
+                {
+                    "match": "\\s?([\\*#]+)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.operator.c"
+                        }
+                    }
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.tlisp",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.tlisp",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "comment": {
+            "name": "comment.line.tlisp",
+            "begin": ";",
+            "end": "\n"
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "match": "\\(+\\s*((when|unless|while|dolist|dotimes|return|def|set|defun|extern-fn|defclass|classfun|import)|(this)|(int|uint|int8|uint8|float|double|bool|vector|array|optional|string)|(nil|f)|(not|or|and)|(<|>|=)|([\\-\\+\\*/%])|([^\\s\\)]+))[\\b\\s\\)]",
+                    "captures": {
+                        "2": {
+                            "name": "keyword.control.python"
+                        },
+                        "3": {
+                            "name": "variable.language.special.self.python"
+                        },
+                        "4": {
+                            "name": "support.type.python"
+                        },
+                        "5": {
+                            "name": "constant.language.python"
+                        },
+                        "6": {
+                            "name": "keyword.operator.logical.python"
+                        },
+                        "7": {
+                            "name": "keyword.operator.comparison.python"
+                        },
+                        "8": {
+                            "name": "keyword.operator.arithmetic.tlisp"
+                        },
+                        "9": {
+                            "name": "meta.function-call.generic.python"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "scopeName": "source.tlisp"
+}

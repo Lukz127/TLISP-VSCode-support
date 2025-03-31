@@ -1,0 +1,38 @@
+{
+    "name": "tlisp-vscode-support",
+    "displayName": "Typed LISP VSCode support",
+    "description": "Language support for Typed LISP",
+    "repository": {
+        "type": "github",
+        "url": "https://github.com/Lukz127/TLISP-VSCode-support"
+    },
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.98.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "tlisp",
+                "aliases": [
+                    "Typed LISP",
+                    "tlisp"
+                ],
+                "extensions": [
+                    ".tlisp"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "tlisp",
+                "scopeName": "source.tlisp",
+                "path": "./syntaxes/tlisp.tmLanguage.json"
+            }
+        ]
+    }
+}
