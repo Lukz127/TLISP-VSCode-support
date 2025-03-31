@@ -39,7 +39,7 @@
         "number": {
             "patterns": [
                 {
-                    "match": "(?<!\\S)(-?\\d+(\\.\\d+)?)\\b",
+                    "match": "(?:(?<!\\S)|(?:\\(\\s*))(-?\\d+(\\.\\d+)?)\\b",
                     "captures": {
                         "1": {
                             "name": "constant.numeric.tlisp"
@@ -95,7 +95,7 @@
         "keywords": {
             "patterns": [
                 {
-                    "match": "\\(+\\s*((nth|continue|break|push|pop|defmacro|sizeof|when|unless|while|dolist|dotimes|return|def|set|defun|extern-fn|defclass|classfun|import)|(this)|(int|uint|int8|uint8|float|double|bool|vector|array|optional|string)|(nil|f)|(not|or|and|xor)|(<|>|=)|([\\-\\+\\*/%])|([^\\s\\)]+))[\\b\\s\\)]",
+                    "match": "^'?\\(+\\s*((nth|continue|break|push|pop|defmacro|sizeof|when|unless|while|dolist|dotimes|return|def|set|defun|extern-fn|defclass|classfun|import)|(this)|(int|uint|int8|uint8|float|double|bool|vector|array|optional|string)|(nil|f)|(not|or|and|xor)|(<|>|=)|([\\-\\+\\*/%])|([^\\s\\)]+))[\\b\\s\\)]",
                     "captures": {
                         "2": {
                             "name": "keyword.control.python"
